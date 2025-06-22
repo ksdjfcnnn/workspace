@@ -51,20 +51,20 @@ def run_migrations():
         print("✅ Database migrations completed")
     return True
 
-def start_server():
+def start_server(host="0.0.0.0", port=12000):
     """Start the FastAPI server"""
     print("🚀 Starting Insightful API server...")
     print("Server will be available at:")
-    print("  - Local: http://localhost:12000")
-    print("  - External: https://work-1-fjkxjusgmutlbdfd.prod-runtime.all-hands.dev")
+    print(f"  - Local: http://localhost:{port}")
+    print(f"  - External: https://work-1-fjkxjusgmutlbdfd.prod-runtime.all-hands.dev")
     print("\nPress Ctrl+C to stop the server")
     
     try:
         subprocess.run([
             sys.executable, "-m", "uvicorn", 
             "app.main:app", 
-            "--host", "0.0.0.0", 
-            "--port", "12000",
+            "--host", host, 
+            "--port", str(port),
             "--reload"
         ])
     except KeyboardInterrupt:
@@ -74,6 +74,13 @@ def main():
     """Main startup function"""
     print("🏢 Insightful API Backend Startup")
     print("=" * 40)
+    
+    # Parse command line arguments
+    import argparse
+    parser = argparse.ArgumentParser(description='Start the Insightful API server')
+    parser.add_argument('--host', type=str, default='0.0.0.0', help='Host to bind to')
+    parser.add_argument('--port', type=int, default=12000, help='Port to bind to')
+    args = parser.parse_args()
     
     # Change to script directory
     os.chdir(Path(__file__).parent)
@@ -90,7 +97,7 @@ def main():
     run_migrations()
     
     # Start server
-    start_server()
+    start_server(host=args.host, port=args.port)
 
 if __name__ == "__main__":
     main()

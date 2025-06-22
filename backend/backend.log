@@ -1,0 +1,40 @@
+INFO:     Will watch for changes in these directories: ['/workspace/workspace/backend']
+INFO:     Uvicorn running on http://0.0.0.0:12001 (Press CTRL+C to quit)
+INFO:     Started reloader process [15983] using WatchFiles
+SendGrid API key not configured. Email sending disabled.
+INFO:     Started server process [15986]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:36688 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36690 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     10.2.46.10:57090 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47552 - "POST /api/v1/auth/login HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:52376 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52392 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56444 - "POST /api/v1/employee/ HTTP/1.1" 403 Forbidden
+WARNING:  WatchFiles detected changes in 'create_test_users.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [15986]
+SendGrid API key not configured. Email sending disabled.
+INFO:     Started server process [21612]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'create_test_users.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [21612]
+SendGrid API key not configured. Email sending disabled.
+INFO:     Started server process [21870]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+(trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/openhands/poetry/openhands-ai-5O4_aCHf-py3.12/lib/python3.12/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+INFO:     127.0.0.1:59220 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59222 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
